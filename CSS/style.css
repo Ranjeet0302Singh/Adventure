@@ -1,9 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header{
+body,html{
+    overflow-x: hidden;
+}
+
+header {
     height: 100vh;
     width: 100vw;
     background-image: url(../Img/header-bg.png);
@@ -13,37 +17,44 @@ header{
     align-items: flex-end;
     justify-content: center;
 }
-a{
+
+a {
     text-decoration: none;
 }
-.header-content{
+
+.header-content {
     margin-bottom: 150px;
     color: whitesmoke;
     text-align: center;
 }
-.header-content h2{
+
+.header-content h2 {
     font-size: 4vmin;
 }
-.line{
+
+.line {
     width: 150px;
     height: 4px;
     margin: 10px auto;
-    background-color:#fc036b;
+    background-color: #fc036b;
     border-radius: 5px;
 }
-.header-content h1{
+
+.header-content h1 {
     margin-top: 50px;
     margin-bottom: 30px;
     font-size: 7vmin;
 }
-.btn{
+
+.btn {
     padding: 8px 15px;
     background-color: #fc036b;
     border-radius: 30px;
     color: whitesmoke;
 }
+
 /* navbar */
-.navbar{
+.navbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -53,31 +64,237 @@ a{
     padding: 20px;
     color: whitesmoke;
 }
-ul{
+
+ul {
     list-style: none;
 }
-.nav-links{
+
+.nav-links {
     display: flex;
     align-items: center;
 }
-.nav-links li{
+
+.nav-links li {
     margin: 0 30px;
 }
-.active{
+
+.active {
     color: #fc036b;
     text-decoration: underline;
     font-weight: bold;
 }
 
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Events */
+section {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.titles {
+    text-align: center;
+    font-size: 4vmin;
+    color: #484872;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    /* background-color: aqua; */
+}
+
+.row .clm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.events .row {
+    margin-top: 50px;
+}
+h4{
+    font-size: 3vmin;
+    color: #484872;
+    margin: 20px auto;
+}
+p{
+    padding: 0px 40px;
+}
+.events .btn{
+    margin-top: 30px;
+}
+
+/* Explore */
+.explore{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Img/bg2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+.explore-content{
+    width: 60%;
+    padding: 50px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.explore-content h1{
+font-size: 7vmin;
+}
+.explore-content .line{
+    margin-bottom: 50px ;
+
+}
+.explore-content p{
+    color: azure;
+}
+.explore-content .btn{
+    margin-top: 40px;
+}
+/* Tours */
+.content-clm{
+    width: 40%;
+}
+.img-clm{
+    width: 60%;
+}
+.tour .image-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+.image-gallery img{
+    max-width: 300px;
+    margin: 10px;
+}
+.content-clm h1{
+    font-size: 7vmin;
+    color: #484872;
+}
+.content-clm .line{
+    margin-left: -1px;
+}
+.content-clm p{
+    padding: 0;
+    margin: 30px auto;
+}
+.content-clm .btn{
+    margin-left: -100px;
+}
+.footer{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    background-color: #484872;
+    text-align: center;
+
+}
+.footer p{
+    margin: 20px auto;
+    color: whitesmoke;
+    padding: 20px auto;
+}
+/* Mobile site */
 /* navbar for mobiles */
 @media only screen and (max-width:850px) {
-    .navbar{
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
         padding: 0;
     }
-    .logo{
+
+    .logo {
         position: absolute;
         top: 30px;
         left: 30px;
 
     }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background-color: #484872;
+        margin-top: -900px;
+        transition: all 0.5s ease
+    }
+
+    .mobile-menu {
+        margin-top: 0px;
+        border-bottom-right-radius: 30%;
+    }
+
+    .nav-links li {
+        margin: 30px auto;
+    }
+    /* Events */
+    .row{
+        flex-direction: column;
+    }
+    .row .clm{
+        margin: 20px auto;
+    }
+    .clm img{
+        max-width: 90%;
+    }
+    /* Explore */
+    .explore-content{
+        width: 100%;
+
+    }
+    /* Tour */
+    .tour .clm{
+        width: 100%;
+    }
+    .image-gallery{
+        justify-content: center;
+        align-items: center;
+    }
+    .image-gallery img{
+        width: 90%;
+    }
+    .footer{
+        padding: 10px;
+    }
+}
+/* Animations */
+img{
+    transition: transform .3s ease;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+.btn:hover{
+    background-color: whitesmoke;
+    color: #fc036b;
+    box-shadow: 2px 2px 5px #00000056;
+}
+li:hover{
+    color: #fc036b;
+    cursor: pointer;
+}
+.logo:hover{
+    color: #fc036b;
+    cursor: pointer;
 }
