@@ -70,6 +70,14 @@ ul{
 }
 
 /* navbar for mobiles */
-@media screen {
-    
+@media only screen and (max-width:850px) {
+    .navbar{
+        padding: 0;
+    }
+    .logo{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+
+    }
 }
